@@ -6,6 +6,8 @@
 # General
 --------------------------------------------------------------*/
 /* colors */
+/* feel free to change these as you will, they affect the 
+entire website and can be a helpful start to customizing */
 :root {
   --color-primary: #4c5372;
   --color-secondary: #7c7e9d;
@@ -20,18 +22,22 @@ body {
   color: var(--color-black);
   font-family: "Space Grotesk", sans-serif;
 }
+/* headings */
 h1, h2, h3, h4, h5 {
   font-family: "Fraunces";
   color: var(--color-black);
 }
+/* links before they are hovered on */
 a {
   color: var(--color-secondary);
 }
+/* links after they are hovered on */
 a:hover {
   color: var(--color-secondary);
   text-decoration: underline var(--color-secondary);
   transition: all 0.2s ease-in-out;
 }
+/* all buttons before hovered on */
 button {
   display: inline-block;
   padding: 0.3rem 0.6rem;
@@ -46,12 +52,14 @@ button {
   transition: all 200ms ease;
   cursor: pointer;
 }
+/* adds a border and color change to a button hover */
 button:hover {
   background-color: var(--color-secondary);
   border: 3px solid transparent;
   color: var(--color-white);
   transition: all 500ms ease;
 }
+/* buttons that don't go anywhere */
 .void-button {
   display: inline-block;
   padding: 0rem 1.5rem;
@@ -65,6 +73,7 @@ button:hover {
   box-shadow: 5px 5px var(--color-black);
   transform: translateY(-5px);
 }
+/* text within the void buttons */
 .void-button p {
   border: none;
   margin: 0.5rem;
@@ -361,16 +370,6 @@ section {
   box-shadow: 10px 10px var(--color-black);
   transform: translateY(-5px);
 }
-.draggable {
-  display: grid;
-  height: 96px;
-  width: 96px;
-  place-content: center;
-  cursor: grab;
-}
-.dragging {
-  cursor: grabbing;
-}
 /*--------------------------------------------------------------
 # Projects
 --------------------------------------------------------------*/
@@ -470,116 +469,6 @@ section {
   transition: all 300ms ease-in-out;
   color: var(--color-highlight);
   transform: translateY(-10px);
-}
-/* ------ Infinite Scrolling Logo Carousel -------------------
-creds to: https://codepen.io/abhikb/pen/yLgMvGw */
-.slider {
-  height: 96px;
-  position: relative;
-  width: 100%;
-
-  display: grid;
-  place-items: center;
-  overflow: hidden;
-  padding-bottom: 15%;
-}
-.slider::before,
-.slider::after{
-  position:absolute;
-  background-image:linear-gradient(to right,var(--color-overlay) 0%,rgba(255,255,255,0) 100%);
-  content:'';
-  height:100%;width:25%;
-  z-index:2;pointer-events:none;
-}
-.slider::before{
-  left:0;
-  top:0;
-}
-.slider::after{
-  right:0;
-  top:0;
-  transform:rotateZ(180deg);
-}
-.slide-track {
-  width: calc(150px * 5);
-  display: flex;
-  animation: scroll 30s linear infinite;
-  justify-content: space-between;
-}
-
-.slide {
-  width: 96px;
-  height: 96px;
-
-  display: grid;
-  place-items: center;
-  transition:0.5s;
-  cursor:pointer;
-}
-.slide:hover {
-  transform: scale(0.8);
-}
-
-.slide-p {
-  display: none;
-  margin-bottom: -5px;
-  color: var(--color-border);
-}
-
-.slide:hover .slide-p {
-  display: block;
-}
-
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0px);
-  }
-  100% {
-    transform: translateX(calc(-150px * 10));
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .slide-track {
-    width: calc(80px * 20);
-  }
-
-  .slide-track2 {
-    width: calc(80px * 15);
-  }
-
-  .slide {
-    width: 80px;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0px);
-    }
-    100% {
-      transform: translateX(calc(-80px * 10));
-    }
-  }
-}
-#carouselExemple {
-  width: 100%;
-  height:50%;
-  margin: 10px auto;
-  margin-top: 50px;
-}
-.carousel-indicators {
-  color: black;
-}
-.carousel-item  {
-  align-items: center;
-}
-.carousel-item .box{
-  background-color: var(--color-white);
-  border: 3px solid var(--color-border);
-  padding: 2.5rem 1.3rem;
-  margin-bottom: 3rem;
-  border-radius: 16px;
 }
 /* --------------------------------------------
 # Projects Page
